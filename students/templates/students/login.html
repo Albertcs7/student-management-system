@@ -1,0 +1,62 @@
+<!-- <head>
+    <style>
+        .login{
+            margin: 0;
+            height: 100vh;               /* Full page height */
+            display: flex;               /* Enable flexbox */
+            justify-content: center;     /* Center horizontally */
+            align-items: center;         /* Center vertically */
+            background: #f5f5f5;
+            font-family: Arial;
+            text-align: center;
+        }
+    </style>
+</head> -->
+<!-- <body>
+<br><br>
+<div class="login">
+<form method = 'POST' action="">
+    {% csrf_token %}
+    <h3>LOGIN</h3>
+    <label>Username:</label><br>
+    <input type = 'text' id="uname" name="uname"><br><br>
+    <label>Password:</label><br>
+    <input type = 'password' id="upass" name="upass"><br><br>
+
+    <button type="submit">Login</button>
+    <button type="button" class="btn">Register</button>
+</a>
+
+</form>
+</div>
+</body> -->
+
+<!--ring div starts here-->
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'students/css/style.css' %}">
+</head>
+<div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+    <form method = 'POST' action="">
+        {% csrf_token %}
+        <h2 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial">Login</h2><br>
+        <div class="inputBx">
+        <input type="text" id="uname" name="uname" placeholder="Username">
+        </div><br>
+        <div class="inputBx">
+        <input type="password" id="upass" name="upass" placeholder="Password">
+        </div><br>
+        <div class="inputBx">
+        <input type="submit" value="Sign in">
+        </div><br>
+        <div class="links">
+        <a href="{% url 'signup' %}">Signup</a>
+        </div>
+    </form>
+  </div>
+</div>
+<!--ring div ends here-->

@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Advanced Employee Management System</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'students/css/homepage.css' %}">
+</head> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'students/css/homepage.css' %}">
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> ScholarSync</h1>
+            <p>Student Management System</p>
+        </header>
+
+        <main>
+            <section class="student-list-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h2 style="margin-bottom: 0; border: none;">Enrolled Students</h2>
+                    <a href="{% url 'add' %}" class="btn-primary" style="width: auto; text-decoration: none;">
+                        <i class="fas fa-plus"></i> Add New Student
+                    </a>
+                </div>
+
+                <div class="table-container">
+                    <table id="student-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Class</th>
+                                <th>GPA</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        
+                            <tbody id="student-list">
+                                    {% for s in students %}
+                                    <tr>
+                                    <td>{{ s.sname}}</td>
+                                    <td>{{ s.sid }}</td>
+                                    <td>{{ s.course }}</td>
+                                    <td>{{ s.gpa }}</td>
+                                    <td>
+                                        <button style="background-color: #4f46e5; color: white; padding:
+                                        10px 20px; border: none; border-radius: 5px;">
+                                        <a href="{% url 'edit' s.id %} " style="text-decoration: none; color:white">Edit</a></button>
+                                        
+                                        <button style="background-color: #4f46e5; color: white; padding:
+                                        10px 20px; border: none; border-radius: 5px;">
+                                        <a href="{% url 'delete' s.id %}" style="text-decoration: none; color:white">Delete</a></button>
+                                    </td>
+                                    </tr>
+                                    
+                                    {% endfor %}
+                            
+                                
+                      
+                            </tbody>
+                        
+                    </table>   
+                    <!-- <div id="empty-state" class="empty-state">
+                                    <i class="fas fa-users-slash"></i>
+                                    <p>No students found. Add one to get started!</p>
+                                </div>             -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

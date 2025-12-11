@@ -1,0 +1,34 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'students/css/style.css' %}">
+</head>
+<div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+    <form method = 'POST' action="">
+        {% csrf_token %}
+        <h2 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial">SignUp</h2><br>
+        <div class="inputBx">
+        <input type="text" id="rname" name="rname" placeholder="Username">
+        </div><br>
+        <div class="inputBx">
+        <input type="text" id="eml" name="eml" placeholder="Email">
+        </div><br>
+        <div class="inputBx">
+        <input type="password" id="rpass" name="rpass" placeholder="Password">
+        </div><br>
+        <div class="inputBx">
+            <input type="password" id="cpass" name="cpass" placeholder="Confirm password">
+        </div><br>
+        <div class="inputBx">
+        <input type="submit" value="SignUp"><br><br>
+        <div class="links">
+        <a href="{% url 'login' %}">Go to login</a>
+        </div>
+        </div>
+
+    </form>
+  </div>
+</div>

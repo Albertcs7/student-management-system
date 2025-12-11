@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student - ScholarSync</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'students/css/homepage.css' %}">
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> ScholarSync</h1>
+            <p>Delete Student</p>
+        </header>
+
+        <main>
+            <section class="delete-student-section" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <div style="margin-bottom: 2rem; color: var(--danger-color);">
+                    <i class="fas fa-exclamation-triangle fa-4x"></i>
+                </div>
+                <h2>Are you sure?</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    You are about to delete the student record for <strong id="delete-student-name">...</strong> (<span
+                        id="delete-student-id-display">...</span>). This action cannot be undone.
+                </p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="index.html" class="btn-primary"
+                        style="background-color: var(--text-secondary); text-decoration: none; width: auto;">Cancel</a>
+                    <button id="confirm-delete-btn" class="btn-primary"
+                        style="background-color: var(--danger-color); width: auto;">
+                        <i class="fas fa-trash-alt"></i> Confirm Delete
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
