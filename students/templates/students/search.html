@@ -1,16 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Advanced Employee Management System</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'students/css/homepage.css' %}">
-</head> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,10 +24,9 @@
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                     <h2 style="margin-bottom: 0; border: none;">Enrolled Students</h2>
                     <div>
-                        <form method="GET" action="{% url 'search' %}">
+                        <form method="GET" class="search-form">
                             <input type="text" name="search-name" placeholder="Searching...">
-                            <button class="btn-primary" >
-                                <a href="{% url 'search' %}" class="btn-primary" style="width: auto; text-decoration: none;">Search</a></button>
+                            <button class="btn-primary"> <a href="{% url 'search'%} " style="text-decoration: none; color:white">Search</a></button>
                         </form>
                     </div>    
                     <a href="{% url 'add' %}" class="btn-primary" style="width: auto; text-decoration: none;">
@@ -86,10 +72,6 @@
                             </tbody>
                         
                     </table>   
-                    <!-- <div id="empty-state" class="empty-state">
-                                    <i class="fas fa-users-slash"></i>
-                                    <p>No students found. Add one to get started!</p>
-                                </div>             -->
                 </div>
             </section>
         </main>

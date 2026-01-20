@@ -79,3 +79,17 @@ def delete(request,id):
     student = get_object_or_404(Student, id=id)
     student.delete()
     return redirect('home')
+
+def search(request):
+    query = request.GET.get('search-name', '').strip()
+
+    if query:
+        students = Student.objects.filter(sname__icontains=query)
+    else:
+        students = Student.objects.none()   # empty queryset
+
+    return render(
+        request,
+        'students/search.html',
+        {'students': students, 'query': query}
+    )
