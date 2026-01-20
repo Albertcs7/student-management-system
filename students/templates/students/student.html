@@ -21,7 +21,7 @@
 
         <main>
             <section class="student-list-section">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <!-- <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                     <h2 style="margin-bottom: 0; border: none;">Enrolled Students</h2>
                     <div>
                         <form method="GET" action="{% url 'search' %}">
@@ -34,8 +34,8 @@
                         <i class="fas fa-plus"></i> Add New Student
                     </a>
                     
-                </div>
-
+                </div> -->
+                
                 <div class="table-container">
                     <table id="student-table">
                         <thead>
@@ -55,28 +55,11 @@
                                     <td>{{ s.sid }}</td>
                                     <td>{{ s.course }}</td>
                                     <td>{{ s.gpa }}</td>
-                                    <td>
-                                        <button style="background-color: #4f46e5; color: white; padding:
-                                        10px 20px; border: none; border-radius: 5px;">
-                                        <a href="{% url 'edit' s.id %} " style="text-decoration: none; color:white">Edit</a></button>
-                                        
-                                        <button style="background-color: #4f46e5; color: white; padding:
-                                        10px 20px; border: none; border-radius: 5px;">
-                                        <a href="{% url 'delete' s.id %}" style="text-decoration: none; color:white">Delete</a></button>
-                                    </td>
                                     </tr>
                                     
                                     {% endfor %}
-                            
-                                
-                      
                             </tbody>
-                        
-                    </table>   
-                    <!-- <div id="empty-state" class="empty-state">
-                                    <i class="fas fa-users-slash"></i>
-                                    <p>No students found. Add one to get started!</p>
-                                </div>             -->
+                    </table>
                 </div>
             </section>
         </main>
